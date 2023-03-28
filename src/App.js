@@ -1,26 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
-import ClassComponent from './components/classComponent';
 import FunctionalComponent from './components/functionComponent';
-import Person from './common/person';
-import PersonFunc from './common/personFunc';
+import ListsComponent from './components/ListsAndKeys';
+import RenderComponent from './components/conditionRendering';
+import PureComponent from './components/pureComponent';
+import ClassComponent from './components/classComponent';
 
 function App() {
-
-  const sampleFunc = () => {
-    alert('I am being called');
-  }
-
   
   return (
     <div className="App">
       <ClassComponent />
-      <FunctionalComponent />
-      {/* <Person name={'John'} age={10} gender={'M'} sampleFunc={sampleFunc} /> 
-      <Person name={'Adam'} age={12} gender={'M'} />
-      <Person name={'Eva'} age={13} gender={'F'} /> */}
-
-      {/* <PersonFunc name={'John'} age={10} gender={'M'} /> */}
+      {/* <FunctionalComponent /> */}
+      {/* <ListsComponent /> */}
+      {/* <RenderComponent /> */}
+      {/* <PureComponent elements={[3,2]} /> */}
     </div>
   );
 }
