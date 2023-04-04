@@ -1,24 +1,10 @@
-const initial_state = {
-    products: []
-};
+import { combineReducers } from "@reduxjs/toolkit";
+import ProductReducer from "./productReducer";
+import UserReducer from "./userReducer";
 
-const ProductReducer = (state=initial_state, action) => {
-    switch(action.type) {
-        case 'SET_PRODUCTS': 
-        return {
-            ...state,
-            products: action.payload
-        }
+const rootReducer = combineReducers({
+    product: ProductReducer,
+    userData: UserReducer
+});
 
-        case 'REMOVE_PRODUCT': 
-        return {
-            ...state,
-            products: state.products.filter((prod) => {
-                return action.payload !== prod.id
-            })
-        }
-    }
-};
-
-export default ProductReducer;
-
+export default rootReducer;

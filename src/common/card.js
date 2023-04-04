@@ -19,7 +19,10 @@ export default function CardComponent(props) {
                     <ListGroup.Item>Rating: {props.product.rating.rate}</ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
-                    <Link to={`/product/${props.product.id}`}>See more</Link>
+                    <button className='btn btn-success'>
+                    <Link style={{color:'#FFF', borderRadius: '0'}} to={`/product/${props.product.id}`}>See more</Link>
+                    </button>
+                    
                     <button onClick={() => {
                             store.dispatch({
                                 type: 'REMOVE_PRODUCT',

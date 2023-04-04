@@ -1,0 +1,2 @@
+export const SET_PRODUCTS = 'SET_PRODUCTS';
+export const SET_USER_DETAILS = 'SET_USER_DETAIL';
