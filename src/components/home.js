@@ -6,13 +6,11 @@ import {SaveProductsData, SaveUserDetails, SaveProductsDataFromApi}  from '../ac
 export default function Home() {
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        console.log('store:', store.getState());
-
-        fetch('https://fakestoreapi.com/products').then((res) => res.json()).then((response) => setProducts(response));
-    }, []);
-
-    store.subscribe(() => console.log('State:', store.getState()))
+    store.subscribe(() => {
+        let state = store.getState();
+        console.log('App State:', state);
+        setProducts(state.product.products);
+    })
 
     return (
         <>
@@ -22,7 +20,7 @@ export default function Home() {
                 }}>Save Data to Store</button>
 
                 <button className='btn btn-primary' onClick={() => {
-                    SaveProductsDataFromApi()();
+                    store.dispatch(SaveProductsDataFromApi());
                 }}>Save Data to Store From API</button>
 
                 <button className='btn btn-danger' onClick={() => {
@@ -53,5 +51,10 @@ export default function Home() {
             </div>
         </>
     )
-}
+};
+
+
+
+
+
 

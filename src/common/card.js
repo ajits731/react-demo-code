@@ -7,7 +7,7 @@ export default function CardComponent(props) {
     return (
         <>
             <Card style={{ width: '18rem', margin: '10px', color: 'black' }}>
-                <Card.Img variant="top" src={props.product.image} />
+                <Card.Img variant="top" src={props.product.images[0]} />
                 <Card.Body style={{maxHeigh: '10em', overflowY: 'scroll'}}>
                     <Card.Title>{props.product.title}</Card.Title>
                     <Card.Text>
@@ -16,7 +16,7 @@ export default function CardComponent(props) {
                 </Card.Body>
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item>Price: {props.product.price}</ListGroup.Item>
-                    <ListGroup.Item>Rating: {props.product.rating.rate}</ListGroup.Item>
+                    <ListGroup.Item>Rating: {props.product.rating}</ListGroup.Item>
                 </ListGroup>
                 <Card.Body>
                     <button className='btn btn-success'>

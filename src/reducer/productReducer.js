@@ -12,6 +12,7 @@ const ProductReducer = (state=initial_state, action) => {
         }
 
         case 'REMOVE_PRODUCT': 
+        console.log('reducer:', action.payload)
         return {
             ...state,
             products: state.products.filter((prod) => {
@@ -27,4 +28,5 @@ const ProductReducer = (state=initial_state, action) => {
 };
 
 export default ProductReducer;
+
 

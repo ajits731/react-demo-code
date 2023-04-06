@@ -8,11 +8,13 @@ export function SaveProductsData (products) {
     }
 }
 
-export function SaveProductsDataFromApi() {
+
+
+export const SaveProductsDataFromApi = () => { 
     return function(dispatch) {
-        axios.get('https://fakestoreapi.com/products').then((response) => dispatch({
+        axios.get('http://localhost:3001/getCustomProducts').then((response) => dispatch({
             type: SET_PRODUCTS,
-            payload: response
+            payload: response.data.products
         }));
     }
 }
